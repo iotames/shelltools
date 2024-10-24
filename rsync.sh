@@ -22,6 +22,7 @@ fi
 if [ ! -d ${BASE_PATH} ]; then
     # 创建全量备份
     echo "${BASE_PATH} not exists. create full backup:\n"
+    mkdir -p ${BASE_PATH}
    # rsync -av --delete "${SOURCE_DIR}/" "${BACKUP_PATH}"
     rsync -trzv --delete "${SOURCE_DIR}/" "${BASE_PATH}"
    # ln -s "${BACKUP_PATH}" "${BASE_PATH}"
